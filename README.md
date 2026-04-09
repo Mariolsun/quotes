@@ -163,6 +163,21 @@ npm run dev
 
 ---
 
+### `Cannot destructure property 'config' ... as it is undefined` в `/admin`
+
+Обычно это конфликт версий пакетов Payload (например, `payload`, `@payloadcms/next`, `@payloadcms/ui` установились разными версиями).
+
+Что сделать:
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+Важно: в этом репозитории версии всех основных пакетов Payload зафиксированы одинаково, чтобы избежать рассинхронизации.
+
+---
+
 ## Принцип MVP
 
 - Один репозиторий и одно приложение.
