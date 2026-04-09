@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { buildConfig } from 'payload'
-import { localStorage } from '@payloadcms/storage-local'
 
 import { Authors } from '@/collections/Authors'
 import { Media } from '@/collections/Media'
@@ -30,16 +29,6 @@ export default buildConfig({
     }
   }),
   secret: process.env.PAYLOAD_SECRET || 'dev-secret-change-me',
-  plugins: [
-    localStorage({
-      collections: {
-        media: {
-          staticDir: path.resolve(process.cwd(), 'media'),
-          generateFileURL: ({ filename }) => `/media/${filename}`
-        }
-      }
-    })
-  ],
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts')
   }
