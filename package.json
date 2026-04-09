@@ -24,7 +24,8 @@
     "pg": "^8.13.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwind-merge": "^3.3.0"
+    "tailwind-merge": "^3.3.0",
+    "@payloadcms/plugin-import-map": "^3.37.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.30",
